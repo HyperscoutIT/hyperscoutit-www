@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { MenuIcon } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { buttonVariants } from "@/components/ui/button";
@@ -19,9 +20,9 @@ export function SiteHeader() {
   return (
     <header className="wrap sticky top-0 z-40 border-b border-rule bg-beige/95 backdrop-blur supports-backdrop-filter:bg-beige/85">
       <div className="container-hs flex h-[76px] items-center justify-between gap-5">
-        <a href="#top" aria-label="Hyperscout Italia, torna all'inizio">
+        <Link href="/" aria-label="Hyperscout Italia, home">
           <Logo />
-        </a>
+        </Link>
 
         <nav
           aria-label="Principale"

@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { CookiePreferencesButton } from "@/components/cookie-preferences-button";
 import { Logo } from "@/components/logo";
 import { site } from "@/lib/site";
 
@@ -6,7 +8,9 @@ export function SiteFooter() {
     <footer className="wrap bg-navy py-12 text-on-navy-dim">
       <div className="container-hs flex flex-col gap-10">
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-center">
-          <Logo tone="light" />
+          <Link href="/" aria-label="Hyperscout Italia, home">
+            <Logo tone="light" />
+          </Link>
           <a
             href={`mailto:${site.contactEmail}`}
             className="text-sm text-on-navy hover:text-beige"
@@ -14,11 +18,22 @@ export function SiteFooter() {
             {site.contactEmail}
           </a>
         </div>
-        <p className="border-t border-navy-rule pt-6 text-[13px]">
-          © {new Date().getFullYear()} {site.legal.company} · Sede legale:{" "}
-          {site.legal.address} · P.IVA e C.F.{" "}
-          {site.legal.vatNumber}
-        </p>
+        <div className="flex flex-col justify-between gap-4 border-t border-navy-rule pt-6 text-[13px] lg:flex-row">
+          <p>
+            © {new Date().getFullYear()} {site.legal.company} · Sede legale:{" "}
+            {site.legal.address} · P.IVA e C.F. {site.legal.vatNumber}
+          </p>
+          <ul className="flex shrink-0 gap-5">
+            <li>
+              <Link href="/cookie-policy/" className="hover:text-beige">
+                Cookie policy
+              </Link>
+            </li>
+            <li>
+              <CookiePreferencesButton className="hover:text-beige" />
+            </li>
+          </ul>
+        </div>
       </div>
     </footer>
   );

@@ -12,9 +12,9 @@ export const site = {
 } as const;
 
 export const nav = [
-  { label: "Come funziona", href: "#come-funziona" },
-  { label: "Fiere", href: "#fiere" },
-  { label: "Contatti", href: "#contatti" },
+  { label: "Come funziona", href: "/#come-funziona" },
+  { label: "Fiere", href: "/#fiere" },
+  { label: "Contatti", href: "/#contatti" },
 ] as const;
 
 export const mailto = (subject: string) =>

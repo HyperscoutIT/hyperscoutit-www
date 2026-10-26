@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Sans, Space_Grotesk } from "next/font/google";
+import { CookieBanner } from "@/components/cookie-banner";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -47,7 +48,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="it"
       className={`${dmSans.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        {children}
+        <CookieBanner />
+      </body>
     </html>
   );
 }

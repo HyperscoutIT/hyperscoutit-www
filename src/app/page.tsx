@@ -52,7 +52,7 @@ export default function Home() {
   return (
     <>
       <SiteHeader />
-      <main id="top" className="flex-1">
+      <main id="contenuto" tabIndex={-1} className="flex-1 outline-none">
         <section className="wrap pt-8 pb-14 md:pt-16 md:pb-20">
           <div className="container-hs grid items-center gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
             <div className="flex flex-col gap-7">
@@ -208,7 +208,7 @@ export default function Home() {
             sizes="100vw"
             className="-z-10 object-cover opacity-30"
           />
-          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/90 to-navy/40" />
+          <div className="absolute inset-0 -z-10 bg-navy/90 md:bg-transparent md:bg-gradient-to-r md:from-navy md:via-navy/90 md:to-navy/40" />
           <div className="wrap py-[clamp(64px,9vw,128px)]">
             <div className="container-hs flex max-w-[40em] flex-col gap-5 lg:max-w-[1280px]">
               <p className="eyebrow text-on-navy-dim">Fiere</p>

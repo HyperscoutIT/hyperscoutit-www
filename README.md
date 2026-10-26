@@ -41,6 +41,18 @@ return <Script src="https://www.googletagmanager.com/gtag/js?id=G-XXXX" />;
 
 3. aggiorna la pagina `src/app/cookie-policy/page.tsx` con nome, fornitore, finalità e durata dei nuovi cookie.
 
+## Accessibilità
+
+Il sito è stato verificato rispetto alle WCAG 2.1 livello AA, il riferimento tecnico della norma EN 301 549 e delle Linee guida AgID:
+
+- analisi automatica con axe-core (regole WCAG 2.0, 2.1 e 2.2 A/AA e best practice) su home, cookie policy e pagina 404, su desktop e mobile, anche con banner cookie, finestra delle preferenze e menu mobile aperti: nessuna violazione;
+- contrasto del testo almeno 4,5:1 ovunque, compresi gli stati hover e il testo sopra la foto della sezione Fiere; contrasto di almeno 3:1 per interruttori e contorno del focus;
+- navigazione completa da tastiera: link "Vai al contenuto principale", contorno di focus visibile su ogni elemento, focus intrappolato nella finestra delle preferenze e nel menu mobile, chiusura con Esc e ritorno del focus al punto di partenza;
+- reflow senza scorrimento orizzontale a 320px (equivalente a uno zoom del 400%) e tenuta con la spaziatura del testo aumentata (WCAG 1.4.12);
+- animazioni e scorrimento morbido disattivati se il sistema operativo chiede di ridurre il movimento.
+
+Per un sito informativo B2B gestito da una piccola impresa, gli obblighi di accessibilità del D.Lgs. 82/2022 (European Accessibility Act) e della legge 4/2004 di norma non si applicano: riguardano soprattutto e-commerce verso consumatori, servizi bancari, trasporti, telecomunicazioni ed e-book, oltre alle aziende con fatturato medio sopra i 500 milioni di euro. Le microimprese di servizi sono esenti. Se in futuro il sito offrirà servizi ai consumatori, per esempio vendite online, va rivalutato. Prima di aggiungere nuove sezioni conviene ripetere almeno l'analisi con axe e una prova da tastiera.
+
 ## Stack
 
 Next.js (App Router, export statico), TypeScript, Tailwind CSS v4, shadcn/ui.

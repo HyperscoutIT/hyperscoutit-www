@@ -54,7 +54,7 @@ export function SiteHeader() {
           </SheetTrigger>
           <SheetContent side="top" className="gap-0 bg-beige pt-[76px]">
             <SheetTitle className="sr-only">Menu</SheetTitle>
-            <nav aria-label="Mobile" className="flex flex-col border-t border-rule">
+            <nav aria-label="Menu mobile" className="flex flex-col border-t border-rule">
               {nav.map((item) => (
                 <a
                   key={item.href}

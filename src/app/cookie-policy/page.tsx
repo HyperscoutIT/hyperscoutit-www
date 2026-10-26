@@ -38,7 +38,11 @@ export default function CookiePolicy() {
   return (
     <>
       <SiteHeader />
-      <main className="wrap flex-1 py-[clamp(40px,6vw,88px)]">
+      <main
+        id="contenuto"
+        tabIndex={-1}
+        className="wrap flex-1 py-[clamp(40px,6vw,88px)] outline-none"
+      >
         <article className="mx-auto flex max-w-[46rem] flex-col gap-10 text-[16px] leading-relaxed [&_a]:text-terra [&_a]:underline [&_a]:underline-offset-3">
           <header className="flex flex-col gap-3">
             <p className="eyebrow text-muted-foreground">
@@ -83,7 +87,12 @@ export default function CookiePolicy() {
               tua scelta sui cookie e a non mostrarti di nuovo il banner a ogni
               visita.
             </p>
-            <div className="overflow-x-auto">
+            <div
+              className="overflow-x-auto"
+              role="region"
+              aria-label="Tabella dei cookie tecnici"
+              tabIndex={0}
+            >
               <table className="w-full min-w-[32rem] border-collapse text-left text-sm">
                 <thead>
                   <tr className="border-b-2 border-navy text-navy">

@@ -36,7 +36,7 @@
   --color-beige-2: #e3e3d8;
   --color-paper: #f5f5ef;
   --color-terra: #994214;
-  --color-terra-hi: #b04e18;
+  --color-terra-hi: #7e3511;
   --color-terra-soft: #e0a882;
   --color-body: #434b5c;
   --color-rule: #dcdcd1;
@@ -89,6 +89,32 @@
   button:not(:disabled),
   [role="button"]:not(:disabled) {
     cursor: pointer;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-navy);
+  outline-offset: 2px;
+}
+
+.bg-navy :focus-visible {
+  outline-color: var(--color-beige);
+}
+
+[tabindex="-1"]:focus-visible {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 

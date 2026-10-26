@@ -41,12 +41,17 @@ export function CookieBanner() {
     [],
   );
 
+  const showBanner = consent === null;
+
   const decide = (choices: ConsentChoices) => {
+    const fromBanner = showBanner;
     saveConsent(choices);
     setPreferencesOpen(false);
+    // The banner unmounts with the button that had focus: move it to the content instead of <body>.
+    if (fromBanner) {
+      window.setTimeout(() => document.getElementById("contenuto")?.focus());
+    }
   };
-
-  const showBanner = consent === null && !preferencesOpen;
 
   return (
     <>

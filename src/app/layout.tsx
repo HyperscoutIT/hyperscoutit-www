@@ -49,8 +49,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${dmSans.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
-        {children}
+        <a
+          href="#contenuto"
+          className="sr-only z-[60] bg-navy font-heading font-bold text-beige focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:px-4 focus:py-3"
+        >
+          Vai al contenuto principale
+        </a>
         <CookieBanner />
+        {children}
       </body>
     </html>
   );

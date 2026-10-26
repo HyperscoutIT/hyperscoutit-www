@@ -1,8 +1,8 @@
 # Hyperscout Italia
 
-Sito placeholder di **Hyperscout Italia**, la sede italiana di [Hyperscout](https://hyperscout.io), destinato a [www.hyperscout.it](https://www.hyperscout.it).
+Sito placeholder di **Hyperscout Italia**, la sede italiana di Hyperscout, destinato a [www.hyperscout.it](https://www.hyperscout.it).
 
-È una versione ridotta del sito internazionale: una sola pagina in italiano con lo stesso stile (palette, font Space Grotesk e DM Sans, logo e foto originali), che presenta il servizio e rimanda al percorso completo su hyperscout.io e all'email di contatto.
+È una versione ridotta del sito Hyperscout: una sola pagina in italiano con lo stesso stile (palette, font Space Grotesk e DM Sans, logo e foto originali), che presenta il servizio. Tutti gli inviti all'azione aprono un'email precompilata verso l'indirizzo di contatto italiano.
 
 Contenuti della pagina:
 
@@ -12,7 +12,7 @@ Contenuti della pagina:
 - "Come funziona" in quattro passaggi
 - "Fiere"
 - contatti per brand e negozi multimarca
-- footer con dati societari e link a privacy, cookie e termini del sito internazionale
+- footer con email e dati societari
 
 Il sito non usa cookie né strumenti di tracciamento, quindi non serve un banner cookie.
 
@@ -52,13 +52,13 @@ Note per il dominio:
 
 ## Dove modificare i contenuti
 
-- `src/lib/site.ts`: email di contatto, link al sito internazionale e al questionario, dati societari, link alle policy, voci di menu.
+- `src/lib/site.ts`: email di contatto, oggetto delle email precompilate, dati societari, voci di menu.
 - `src/app/page.tsx`: tutti i testi della pagina.
 - `src/app/layout.tsx`: titolo, descrizione e metadati SEO.
 - `public/images/`: foto della pagina. `src/app/opengraph-image.jpg` è l'anteprima mostrata quando il link viene condiviso.
 
 ## Da verificare prima della pubblicazione
 
-- **Email**: al momento è `contact@hyperscout.io`. Se la sede italiana avrà un indirizzo dedicato (per esempio su `hyperscout.it`), aggiornarlo in `src/lib/site.ts`.
+- **Email**: il sito usa `contact@hyperscout.it`. La casella deve esistere ed essere monitorata, altrimenti cambiare l'indirizzo in `src/lib/site.ts`.
 - **Dati societari**: il footer riporta Hyperscout Holding B.V. (L'Aia, KvK 42034826). Se la succursale italiana ha una propria sede o partita IVA, va aggiunta qui: per i siti italiani di attività commerciali è richiesta l'indicazione della partita IVA.
-- **Policy**: privacy, cookie e termini rimandano alle pagine in inglese di hyperscout.io.
+- **Privacy**: il sito non ha più link a privacy, cookie e termini. Non usa cookie né raccoglie dati tramite moduli, ma è comunque consigliabile pubblicare un'informativa privacy in italiano prima del lancio.

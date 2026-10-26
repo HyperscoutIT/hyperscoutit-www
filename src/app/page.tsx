@@ -4,7 +4,7 @@ import { ShortlistCard } from "@/components/shortlist-card";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { buttonVariants } from "@/components/ui/button";
-import { mailto, site } from "@/lib/site";
+import { mailto, site, startMailto } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const partners = ["Pitti Uomo", "Modefabriek", "INDX", "Moddity", "Modint"];
@@ -31,7 +31,7 @@ const steps = [
 function Micro({ className }: { className?: string }) {
   return (
     <p className={cn("text-sm text-muted-foreground", className)}>
-      11 domande · 3 minuti · rispondiamo entro quattro ore lavorative
+      Scrivici: ti risponde una persona entro quattro ore lavorative
     </p>
   );
 }
@@ -39,11 +39,11 @@ function Micro({ className }: { className?: string }) {
 function StartCta({ className }: { className?: string }) {
   return (
     <a
-      href={site.startUrl}
+      href={startMailto}
       className={cn(buttonVariants({ size: "xl" }), className)}
     >
       Trova il tuo prossimo punto vendita
-      <ArrowRightIcon className="size-5" />
+      <MailIcon className="size-5" />
     </a>
   );
 }
@@ -243,9 +243,9 @@ export default function Home() {
                 La crescita non deve essere una scommessa. Può essere un piano.
               </h2>
               <p className="max-w-[34em] text-[clamp(16px,1.35vw,18px)] leading-relaxed">
-                Il sito italiano completo è in preparazione. Nel frattempo puoi
-                avviare subito il percorso su hyperscout.io oppure scrivere al
-                team: rispondiamo anche in italiano.
+                Il sito completo di Hyperscout Italia è in preparazione. Nel
+                frattempo scrivici: raccontaci il tuo brand e i mercati in cui
+                vuoi crescere, e il team italiano ti ricontatta.
               </p>
               <div className="flex flex-col items-start gap-3">
                 <StartCta />
@@ -283,12 +283,6 @@ export default function Home() {
                   <MailIcon className="size-4" />
                   {site.contactEmail}
                 </span>
-              </a>
-              <a
-                href={site.globalUrl}
-                className="inline-flex w-fit items-center gap-2 pt-2 text-sm text-muted-foreground hover:text-terra"
-              >
-                Visita il sito internazionale hyperscout.io ↗
               </a>
             </div>
           </div>

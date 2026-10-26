@@ -1,9 +1,7 @@
 export const site = {
   name: "Hyperscout Italia",
   url: "https://www.hyperscout.it",
-  globalUrl: "https://hyperscout.io",
-  startUrl: "https://hyperscout.io/nextpointsale",
-  contactEmail: "contact@hyperscout.io",
+  contactEmail: "contact@hyperscout.it",
   description:
     "Troviamo i negozi multimarca giusti per il tuo brand, nei mercati in cui vuoi crescere. La sede italiana di Hyperscout.",
   legal: {
@@ -11,11 +9,6 @@ export const site = {
     address: "Bazarstraat 44, L'Aia (Paesi Bassi)",
     registry: "KvK 42034826",
   },
-  policies: [
-    { label: "Privacy", href: "https://hyperscout.io/PrivacyPolicy" },
-    { label: "Cookie", href: "https://hyperscout.io/CookiePolicy" },
-    { label: "Termini", href: "https://hyperscout.io/TermsOfService" },
-  ],
 } as const;
 
 export const nav = [
@@ -26,3 +19,7 @@ export const nav = [
 
 export const mailto = (subject: string) =>
   `mailto:${site.contactEmail}?subject=${encodeURIComponent(subject)}`;
+
+export const startMailto = mailto(
+  "Hyperscout Italia: trovare il prossimo punto vendita",
+);

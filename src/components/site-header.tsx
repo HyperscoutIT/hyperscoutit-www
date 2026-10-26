@@ -10,7 +10,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { nav, site } from "@/lib/site";
+import { nav, startMailto } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
@@ -37,10 +37,10 @@ export function SiteHeader() {
             </a>
           ))}
           <a
-            href={site.startUrl}
+            href={startMailto}
             className={cn(buttonVariants({ size: "cta" }))}
           >
-            Trova il tuo prossimo negozio
+            Scrivici
           </a>
         </nav>
 
@@ -65,10 +65,10 @@ export function SiteHeader() {
                 </a>
               ))}
               <a
-                href={site.startUrl}
+                href={startMailto}
                 className="wrap border-b border-rule py-[18px] text-[17px] font-bold text-terra"
               >
-                Trova il tuo prossimo negozio →
+                Scrivici →
               </a>
             </nav>
           </SheetContent>

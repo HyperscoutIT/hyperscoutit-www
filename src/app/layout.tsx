@@ -23,10 +23,6 @@ export const metadata: Metadata = {
   description: site.description,
   alternates: {
     canonical: "/",
-    languages: {
-      "it-IT": site.url,
-      en: site.globalUrl,
-    },
   },
   openGraph: {
     type: "website",

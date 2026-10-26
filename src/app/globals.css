@@ -1,0 +1,108 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-dm-sans);
+  --font-heading: var(--font-space-grotesk);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+
+  --color-navy: #132744;
+  --color-navy-rule: #2b4165;
+  --color-beige: #ebebe1;
+  --color-beige-2: #e3e3d8;
+  --color-paper: #f5f5ef;
+  --color-terra: #994214;
+  --color-terra-hi: #b04e18;
+  --color-terra-soft: #e0a882;
+  --color-body: #434b5c;
+  --color-rule: #dcdcd1;
+  --color-on-navy: #c3ccda;
+  --color-on-navy-dim: #97a5b9;
+}
+
+:root {
+  --background: #ebebe1;
+  --foreground: #434b5c;
+  --card: #f5f5ef;
+  --card-foreground: #132744;
+  --popover: #ebebe1;
+  --popover-foreground: #132744;
+  --primary: #994214;
+  --primary-foreground: #ebebe1;
+  --secondary: #132744;
+  --secondary-foreground: #ebebe1;
+  --muted: #e3e3d8;
+  --muted-foreground: #4a5262;
+  --accent: #e3e3d8;
+  --accent-foreground: #132744;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #dcdcd1;
+  --input: #dcdcd1;
+  --ring: #994214;
+  --radius: 0rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    @apply bg-background text-foreground;
+    line-height: 1.6;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-heading font-bold text-navy;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@utility wrap {
+  padding-inline: clamp(20px, 5vw, 96px);
+}
+
+@utility container-hs {
+  max-width: 1280px;
+  margin-inline: auto;
+}
+
+@utility eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}

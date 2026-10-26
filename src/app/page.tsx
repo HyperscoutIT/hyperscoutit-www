@@ -56,10 +56,6 @@ export default function Home() {
         <section className="wrap pt-8 pb-14 md:pt-16 md:pb-20">
           <div className="container-hs grid items-center gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
             <div className="flex flex-col gap-7">
-              <p className="eyebrow inline-flex w-fit items-center gap-2 border border-terra/30 bg-paper px-3 py-1.5 font-bold text-terra">
-                <span className="size-1.5 rounded-full bg-terra" aria-hidden />
-                Hyperscout arriva in Italia
-              </p>
               <h1 className="text-[clamp(36px,5.6vw,62px)] leading-[1.02]">
                 Trova i negozi giusti. Entra nei mercati giusti.
               </h1>

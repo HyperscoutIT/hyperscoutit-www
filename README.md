@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hyperscout Italia
 
-## Getting Started
+Sito placeholder di **Hyperscout Italia**, la sede italiana di [Hyperscout](https://hyperscout.io), destinato a [www.hyperscout.it](https://www.hyperscout.it).
 
-First, run the development server:
+È una versione ridotta del sito internazionale: una sola pagina in italiano con lo stesso stile (palette, font Space Grotesk e DM Sans, logo e foto originali), che presenta il servizio e rimanda al percorso completo su hyperscout.io e all'email di contatto.
+
+Contenuti della pagina:
+
+- hero con la proposta di valore e un esempio di riga della shortlist
+- citazione di Pitti Immagine e partner (Pitti Uomo, Modefabriek, INDX, Moddity, Modint)
+- "Uno scaffale è una decisione": il metodo
+- "Come funziona" in quattro passaggi
+- "Fiere"
+- contatti per brand e negozi multimarca
+- footer con dati societari e link a privacy, cookie e termini del sito internazionale
+
+Il sito non usa cookie né strumenti di tracciamento, quindi non serve un banner cookie.
+
+## Stack
+
+Next.js (App Router, export statico), TypeScript, Tailwind CSS v4, shadcn/ui.
+
+## Sviluppo in locale
+
+Requisiti: Node.js 20 o superiore.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Il sito è disponibile su <http://localhost:4317>.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build e pubblicazione
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+La build genera la cartella `out/`, composta solo da file statici (HTML, CSS, JS, immagini). Si può pubblicare su qualunque hosting statico: Vercel, Netlify, Cloudflare Pages, un bucket S3 o DigitalOcean Spaces, oppure un server Nginx o Apache.
 
-To learn more about Next.js, take a look at the following resources:
+Per controllare la build in locale:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Note per il dominio:
 
-## Deploy on Vercel
+- puntare `www.hyperscout.it` all'hosting scelto (record CNAME o A, secondo il provider);
+- impostare un redirect 301 da `hyperscout.it` a `https://www.hyperscout.it`, perché canonical, sitemap e Open Graph usano l'indirizzo con `www`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Dove modificare i contenuti
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `src/lib/site.ts`: email di contatto, link al sito internazionale e al questionario, dati societari, link alle policy, voci di menu.
+- `src/app/page.tsx`: tutti i testi della pagina.
+- `src/app/layout.tsx`: titolo, descrizione e metadati SEO.
+- `public/images/`: foto della pagina. `src/app/opengraph-image.jpg` è l'anteprima mostrata quando il link viene condiviso.
+
+## Da verificare prima della pubblicazione
+
+- **Email**: al momento è `contact@hyperscout.io`. Se la sede italiana avrà un indirizzo dedicato (per esempio su `hyperscout.it`), aggiornarlo in `src/lib/site.ts`.
+- **Dati societari**: il footer riporta Hyperscout Holding B.V. (L'Aia, KvK 42034826). Se la succursale italiana ha una propria sede o partita IVA, va aggiunta qui: per i siti italiani di attività commerciali è richiesta l'indicazione della partita IVA.
+- **Policy**: privacy, cookie e termini rimandano alle pagine in inglese di hyperscout.io.

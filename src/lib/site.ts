@@ -5,9 +5,9 @@ export const site = {
   description:
     "Troviamo i negozi multimarca giusti per il tuo brand, nei mercati in cui vuoi crescere. La sede italiana di Hyperscout.",
   legal: {
-    company: "Hyperscout Holding B.V.",
-    address: "Bazarstraat 44, L'Aia (Paesi Bassi)",
-    registry: "KvK 42034826",
+    company: "Hyperscout Italia S.r.l.",
+    address: "Via Duomo 53, 74121 Taranto (TA), Italia",
+    vatNumber: "03498360738",
   },
 } as const;
 

@@ -15,8 +15,8 @@ export function SiteFooter() {
           </a>
         </div>
         <p className="border-t border-navy-rule pt-6 text-[13px]">
-          © {new Date().getFullYear()} {site.legal.company} ·{" "}
-          {site.legal.address} · {site.legal.registry}
+          © {new Date().getFullYear()} {site.legal.company} · Sede legale:{" "}
+          {site.legal.address} · P.IVA {site.legal.vatNumber}
         </p>
       </div>
     </footer>

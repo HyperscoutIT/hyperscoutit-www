@@ -60,5 +60,5 @@ Note per il dominio:
 ## Da verificare prima della pubblicazione
 
 - **Email**: il sito usa `contact@hyperscout.it`. La casella deve esistere ed essere monitorata, altrimenti cambiare l'indirizzo in `src/lib/site.ts`.
-- **Dati societari**: il footer riporta Hyperscout Holding B.V. (L'Aia, KvK 42034826). Se la succursale italiana ha una propria sede o partita IVA, va aggiunta qui: per i siti italiani di attività commerciali è richiesta l'indicazione della partita IVA.
+- **Dati societari**: il footer riporta ragione sociale, sede legale e partita IVA di Hyperscout Italia S.r.l. Per completare i dati richiesti dall'art. 2250 del Codice civile vanno aggiunti in `src/lib/site.ts` e nel footer: numero REA e ufficio del Registro delle imprese, capitale sociale versato, l'eventuale indicazione "società a socio unico" e l'eventuale soggezione a direzione e coordinamento di un'altra società. Se la società è iscritta come startup innovativa, serve anche una pagina con le informazioni dell'art. 25, comma 11, del DL 179/2012, raggiungibile dalla home page.
 - **Privacy**: il sito non ha più link a privacy, cookie e termini. Non usa cookie né raccoglie dati tramite moduli, ma è comunque consigliabile pubblicare un'informativa privacy in italiano prima del lancio.
